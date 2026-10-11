@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Our Juniors ♡</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #f5faff;
+    color: #526d85;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 65px 20px;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffffff, #dceeff);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 7vw, 65px);
+    animation: muncul 2s ease;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    letter-spacing: 3px;
+    animation: muncul 3s ease;
+}
+
+.cloud {
+    position: absolute;
+    font-size: 45px;
+    animation: terbang 8s infinite alternate ease-in-out;
+}
+
+.cloud.one {
+    top: 15%;
+    left: 10%;
+}
+
+.cloud.two {
+    bottom: 15%;
+    right: 10%;
+}
+
+button {
+    border: none;
+    background: #9fc5e8;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 20px;
+    transition: .3s;
+}
+
+button:hover {
+    background: #729fc9;
+    transform: scale(1.06);
+}
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes terbang {
+    from { transform: translateX(-20px); }
+    to { transform: translateX(30px); }
+}
+
+.envelope {
+    font-size: 95px;
+    cursor: pointer;
+    transition: .5s;
+    display: inline-block;
+}
+
+.envelope:hover {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+.letter {
+    display: none;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 35px;
+    background: white;
+    border: 2px solid #d5e9fa;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px #b5d1e555;
+    line-height: 2;
+    animation: muncul 1s ease;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: 180px;
+    gap: 20px;
+    max-width: 850px;
+    margin: 35px auto;
+}
+
+.photo {
+    background: white;
+    padding: 10px 10px 22px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px #9bbbd455;
+    transition: .4s;
+    animation: muncul 1.5s ease;
+}
+
+.photo:nth-child(1) {
+    grid-column: span 2;
+}
+
+.photo:nth-child(2) {
+    grid-column: span 2;
+}
+
+.photo:nth-child(3) {
+    grid-column: span 2;
+}
+
+.photo:nth-child(4) {
+    grid-row: span 2;
+}
+
+.photo:nth-child(5) {
+    grid-row: span 2;
+}
+
+.photo:hover {
+    transform: translateY(-10px) rotate(2deg);
+}
+
+.photo img {
+    width: 100%;
+    height: 100px;
+    min-height: 180px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.photo p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.closing {
+    background: linear-gradient(135deg, #dceeff, #ffffff);
+    padding: 100px 20px;
+}
+
+.closing h1 {
+    font-size: clamp(28px, 5vw, 45px);
+}
+
+footer {
+    padding: 25px;
+    background: #dceeff;
+}
+
+#viewer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #172c40dd;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+#viewer img {
+    max-width: 90%;
+    max-height: 85%;
+    border: 8px solid white;
+    border-radius: 10px;
+}
+
+#viewer span {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+
+<section class="hero">
+
+<div class="cloud one">☁️</div>
+<div class="cloud two">☁️</div>
+
+<p>A LITTLE MEMORIES PRESENTS</p>
+
+<h1>For Our Juniors ♡</h1>
+
+<p>THANK YOU FOR BEING PART OF OUR STORY</p>
+
+<div style="font-size:35px">🩵 ✧ 🌷 ✧ 🩵</div>
+
+<button onclick="openMemories()">
+OPEN THIS MEMORIES ♡
+</button>
+
+</section>
+
+
+<!-- SURAT -->
+
+<section id="surat">
+
+<h1>A Letter For You 💌</h1>
+
+<p>There's a little message waiting for you...</p>
+
+<div class="envelope" onclick="showLetter()">
+💌
+</div>
+
+<p><i>Click the envelope to open</i></p>
+
+<div class="letter" id="letter">
+
+<h2>Hai, adik-adik! ♡</h2>
+<h2>♡ A Little Message from Us♡</h2>
+
+<!-- GANTI ISI SURAT DI BAWAH INI -->
+
+<p>
+    Nggak nyangka ya, ternyata waktu secepat ini. Rasanya baru kemarin kita mulai bareng-bareng, kenalan, rapat, sibuk nyiapin acara, ketawa nggak jelas, pusing bareng, sampai kadang harus nahan capek demi tanggung jawab yang udah kita ambil.
+
+    Jujur, bakal kangen banget sama semua hal itu. Kangen suasana rame kalian, tingkah random kalian, cerita-cerita kecil yang kadang nggak penting tapi selalu bikin hari jadi lebih seru. Bahkan mungkin hal-hal yang dulu sering bikin pusing, suatu saat justru jadi hal yang paling dirindukan.
+
+    Terima kasih ya, sudah mau menjadi bagian dari perjalanan ini. Terima kasih karena sudah meluangkan waktu, tenaga, pikiran, dan semuanya untuk OSIS. Terima kasih sudah mau belajar, berproses, mencoba hal-hal baru, dan tetap bertahan meskipun mungkin ada banyak hal yang bikin capek. Kami tahu, menjadi bagian dari OSIS nggak selalu menyenangkan. Ada tanggung jawab yang harus dijalankan, ada waktu yang harus dikorbankan, ada perbedaan pendapat, bahkan ada masalah yang kadang bikin kita sama-sama pusing.
+
+    Tapi lihat, kita sudah sampai sejauh ini. Kita pernah melewati banyak hal bersama, punya cerita yang mungkin nggak akan bisa terulang dengan cara yang sama.
+
+    Sebelumnya, kami juga mau minta maaf, ya. Maaf kalau selama ini masih banyak kurangnya. Maaf kalau pernah terlalu keras, sering marah, banyak menuntut, kurang sabar, atau mungkin ada perkataan dan sikap kami yang tanpa sadar bikin kalian sakit hati. Maaf juga kalau belum bisa jadi kakak yang baik dan belum bisa memberikan contoh yang sempurna buat kalian.
+</p>
+
+<p>
+Percaya deh, kami juga masih banyak belajar. Kami juga pernah salah, pernah bingung, pernah capek, dan mungkin belum selalu bisa memahami kalian. Tapi di balik semua itu, kami selalu berharap yang terbaik buat kalian. Kami nggak pernah bermaksud membuat kalian merasa kecil atau nggak dihargai. Kalau selama ini ada sikap kami yang kurang berkenan, sekali lagi, maaf banget, ya.
+
+Buat adik-adik yang nantinya masih melanjutkan ke periode kedua, semangat terus, ya! Perjalanan kalian masih panjang. Jangan cepat puas dengan apa yang sudah kalian capai sekarang. Masih banyak hal yang bisa dipelajari, masih banyak pengalaman yang bisa didapat, dan masih banyak kesempatan buat kalian berkembang.
+
+Tolong jaga kebersamaan yang sudah dibangun. Jangan sampai perbedaan pendapat bikin kalian saling menjauh. Jangan cuma meneruskan kepengurusan, tapi teruskan juga rasa kekeluargaan yang selama ini sudah kita punya. Kalau ada masalah, diselesaikan bareng-bareng. Kalau ada yang kesulitan, jangan dibiarkan sendirian. Ingat, OSIS bukan cuma tentang jabatan, tapi juga tentang orang-orang yang ada di dalamnya.
+
+Dan buat adik-adik yang nantinya nggak lanjut ke periode kedua, please, jangan pernah merasa kalau perjuangan kalian selama ini sia-sia, ya. Jangan merasa gagal hanya karena perjalanan kalian di OSIS harus berhenti sampai di sini. Nggak semua orang harus terus berada di tempat yang sama untuk bisa disebut hebat.
+
+Terima kasih karena pernah menjadi bagian dari cerita ini. Terima kasih sudah memberikan waktu, tenaga, dan usaha kalian selama menjadi bagian dari keluarga OSIS. Walaupun nantinya kalian nggak lagi punya jabatan atau tanggung jawab yang sama, bukan berarti keberadaan kalian jadi nggak penting.
+
+Jangan merasa tertinggal hanya karena teman-teman kalian masih melanjutkan perjalanan di sini. Kalian punya jalan masing-masing, punya cerita masing-masing, dan punya kesempatan untuk berkembang di tempat yang berbeda. Kami tetap bangga sama kalian, dengan atau tanpa jabatan yang kalian punya.
+
+Karena pada akhirnya, yang paling penting bukan seberapa lama kalian bertahan di sebuah organisasi, tapi seberapa banyak hal baik yang kalian dapatkan dan berikan selama berada di dalamnya.
+
+Mungkin setelah ini kita nggak akan sesering dulu ketemu. Nggak ada lagi obrolan panjang saat rapat, nggak ada lagi kesibukan yang sama, dan nggak ada lagi momen-momen kecil yang biasa kita lewati bareng. Mungkin nanti kita bakal sibuk dengan urusan masing-masing, punya lingkungan baru, dan menjalani cerita yang berbeda.
+
+Tapi kalau suatu saat kalian kangen masa-masa ini, ingatlah kalau kalian pernah punya cerita bersama kami. Dan kami juga akan selalu ingat kalau pernah dipertemukan dengan adik-adik sehebat kalian.
+
+Kalau nanti kalian sudah ada di posisi kami, semoga kalian bisa memahami kenapa dulu kami sering mengingatkan, kenapa kadang kami marah, dan kenapa kami begitu ingin kalian bisa melakukan yang terbaik. Bukan karena kami merasa paling benar, tapi karena kami ingin kalian punya cerita yang indah selama berada di sini. Maaf kalau cara kami menyayangi kalian belum selalu terasa menyenangkan.
+
+Terakhir, jangan pernah merasa sendirian, ya. Kalau capek, istirahat sebentar. Kalau ada masalah, jangan takut cerita. Kalau gagal, coba lagi. Nikmati setiap prosesnya, karena suatu saat nanti kalian mungkin akan sadar kalau masa-masa ini ternyata seberharga itu.
+
+Terima kasih sudah hadir, sudah berjuang, sudah mau belajar, dan sudah menjadi bagian dari cerita kami. Kalian bukan sekadar adik-adik yang pernah bekerja bersama kami, tapi kalian adalah bagian dari perjalanan yang akan selalu kami kenang.
+
+Jangan lupain kami, ya? Walaupun nanti udah punya kesibukan masing-masing, semoga kita tetap jadi orang-orang yang saling kenal, saling sapa, dan nggak canggung kalau suatu saat dipertemukan lagi.
+</p>
+
+<p>
+Terima kasih sudah menjadi bagian dari perjalanan ini.
+Semoga kalian terus berkembang dan menciptakan
+cerita indah kalian sendiri.
+</p>
+
+<!-- BATAS AKHIR SURAT -->
+
+<h3>♡ A little love, a lot of memories. Forever grateful to have you. ♡</h3>
+
+</div>
+
+</section>
+
+
+<!-- GALERI FOTO -->
+
+<section>
+
+<h1>Our Little Memories 📸</h1>
+
+<p>Some moments, endless memories.</p>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="foto1.jpg" onclick="zoom(this)">
+<p>Our memories ♡</p>
+</div>
+
+<div class="photo">
+<img src="foto2.jpg" onclick="zoom(this)">
+<p>Little moments ♡</p>
+</div>
+
+<div class="photo">
+<img src="foto3.jpg" onclick="zoom(this)">
+<p>Happy together ♡</p>
+</div>
+
+<div class="photo">
+<img src="foto4.jpg" onclick="zoom(this)">
+<p>Beautiful stories ♡</p>
+</div>
+
+<div class="photo">
+<img src="foto5.jpg" onclick="zoom(this)">
+<p>Forever remembered ♡</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PENUTUP -->
+
+<section class="closing">
+
+<h1>This Is Not The End ♡</h1>
+
+<p>
+Keep growing, keep shining, and keep creating
+your own beautiful story.
+</p>
+
+<p>
+Thank you for all the memories and love! 🩵
+</p>
+
+<div style="font-size:40px">
+☁️ 🩵 🌷 🩵 ☁️
+</div>
+
+</section>
+
+
+<footer>
+Made with love ♡
+<br>
+© Our Memories
+</footer>
+
+
+<!-- PEMBESAR FOTO -->
+
+<div id="viewer" onclick="closeZoom()">
+<span>×</span>
+<img id="bigPhoto">
+</div>
+
+
+<!-- MUSIK -->
+
+<audio id="music" src="lagu.mp3" loop></audio>
+
+<button id="musicButton" onclick="toggleMusic()"
+style="position:fixed; bottom:20px; right:15px; z-index:5;">
+♫ Play Music
+</button>
+
+
+<script>
+
+function openMemories() {
+    document.getElementById("surat").scrollIntoView({
+        behavior: "smooth"
+    });
+
+    let music = document.getElementById("music");
+
+    music.play().then(() => {
+        document.getElementById("musicButton").innerHTML =
+        "♫ Pause Music";
+    }).catch(() => {
+        alert("Klik tombol Play Music untuk memutar lagu.");
+    });
+}
+
+function showLetter() {
+    let letter = document.getElementById("letter");
+
+    if (letter.style.display === "block") {
+        letter.style.display = "none";
+    } else {
+        letter.style.display = "block";
+    }
+}
+
+function zoom(photo) {
+    document.getElementById("viewer").style.display = "flex";
+    document.getElementById("bigPhoto").src = photo.src;
+}
+
+function closeZoom() {
+    document.getElementById("viewer").style.display = "none";
+}
+
+function toggleMusic() {
+    let music = document.getElementById("music");
+    let button = document.getElementById("musicButton");
+
+    if (music.paused) {
+        music.play();
+        button.innerHTML = "♫ Pause Music";
+    } else {
+        music.pause();
+        button.innerHTML = "♫ Play Music";
+    }
+}
+
+</script>
+
+</body>
+</html>
